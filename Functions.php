@@ -1,18 +1,16 @@
 <?php
-class Process{
+class Functions{
 
 	private $API_KEY;
 	private $con;
     
     //Connect to MySQL and config the API_KEY
 	function __construct(){
-		require_once('config.php');
+		require_once('lib/config.php');
 
 		$this->API_KEY = $config['API_KEY'];
-		
-		$this->con = mysqli_connect($config['host'], $config['user'], $config['password']);
-		mysqli_select_db($this->con, $config['db']);
 
+		$this->con = new Database;
 	}
     
     //Convert decimal to deg/min/sec

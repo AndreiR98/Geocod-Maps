@@ -1,9 +1,10 @@
 <?php
 //Load Smart files and libraries
 require_once('include.inc.php');
+include('Functions.php');
 
-//Load Process class
-$process = new Process();
+//Load Functions class
+$process = new Functions();
 
 if($_POST){
 	$POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
